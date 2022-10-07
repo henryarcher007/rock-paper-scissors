@@ -25,46 +25,44 @@ computerSelection = getComputerChoice()
 console.log(computerSelection)
 console.log(num)
 
-let getPlayerChoice = prompt("Rock, Paper, or Scissor?")
-let playerSelection = getPlayerChoice.toLowerCase()
 
-console.log(playerSelection)
+function playRound(){
+    for (let i = 0; i <= 5; i++) {
+        i = game()
 
-function rockPaperScissor(){
+    }
+}
+
+function game(){
+    
+    let getPlayerChoice = prompt("Rock, Paper, or Scissor?")
+    let playerSelection = getPlayerChoice.toLowerCase()
+
+        console.log(playerSelection)
+    
     if(playerSelection == computerSelection){
-        return message = alert("Tie!")
+        return message = alert(`Tie! You and the computer selected ${playerSelection}`)
     }
-    else if(playerSelection == 'rock'){
-        if (computerSelection == 'paper'){
-            return message = alert("You lose! Paper beats Rock.")
-       }
+    else if(playerSelection == 'rock' && computerSelection == 'paper'){
+        return message = alert("You lose! Paper beats Rock.")
     }
-    else if(playerSelection == 'paper'){
-        if (computerSelection == 'scissor'){
-            return message = alert("You lose! Scissors beats Paper.")
-        }
+    else if(playerSelection == 'paper' && computerSelection == 'scissor'){
+        return message = alert("You lose! Scissors beats Paper.")
     }
-    else if(playerSelection == 'scissor'){
-        if (computerSelection == 'rock'){
-            return message = alert("You lose! Rock beats Scissors.")
-        }
+    else if(playerSelection == 'scissor' && computerSelection == 'rock'){
+        return message = alert("You lose! Rock beats Scissors.")
     }
-    else if(computerSelection == 'scissor'){
-        if (playerSelection == 'rock'){
-            return message = alert("You win! Rock beats Scissors.")
-       }
+    else if(computerSelection == 'scissor' && playerSelection == 'rock'){
+        return message = alert("You win! Rock beats Scissors.")
     }
-    else if(computerSelection == 'rock'){
-        if (playerSelection == 'paper'){
-            return message = alert("You Win! Paper beats Scissors.")
-        }
+    else if(computerSelection == 'rock' && playerSelection == 'paper'){
+        return message = alert("You Win! Paper beats Scissors.")
     }
-    else if(computerSelection == 'paper'){
-        if (playerSelection == 'scissor'){
-            return message = alert("You Win! Scissors beats Paper.")
-        }
+    else if(computerSelection == 'paper' && playerSelection == 'scissor'){
+        return message = alert("You Win! Scissors beats Paper.")
     }
+}
 
-}       
 
-result = rockPaperScissor()
+
+result = game()
