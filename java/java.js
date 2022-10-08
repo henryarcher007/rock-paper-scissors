@@ -1,15 +1,27 @@
 
+//global variables
 let round = 0;
 let games = 0;
 
 let computer = 0
 let you = 0
 
-function game(){
-    let computerSelection = 0
-    let num = 0
 
+playRound()
+
+function game(){
+    /*
+    the game() function gets the player input and 
+    computer input and compares them to see which 
+    value will win
+    */
+
+    let computerSelection = 0
+    
     function getComputerChoice(){
+        
+        let num = 0
+
         function randomNumber(){
             return Math.floor(Math.random()* 3);
         };
@@ -27,9 +39,10 @@ function game(){
     }
 
     computerSelection = getComputerChoice()
-    console.log(computerSelection)
 
-    result = rockPaperScissors()
+
+    // rockPaperScissors function
+    rockPaperScissors()
 
     function rockPaperScissors(){
         let getPlayerChoice = prompt("Rock, Paper, or Scissor?")
@@ -65,7 +78,7 @@ function game(){
     }
 };
 
-
+// loop function
 function playRound(){
     for (let i = 1; i < 6; i++) {
     game()
@@ -75,8 +88,7 @@ function playRound(){
     return winnerLoser()
 };
 
-playRound()
-
+// winner/loser display
 function winnerLoser(){
 if (you > computer){
     return console.log('You win the game!')
