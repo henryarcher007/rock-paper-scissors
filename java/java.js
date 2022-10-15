@@ -3,11 +3,11 @@
 let round = 0;
 let games = 0;
 
-let computer = 0
-let you = 0
+let computer = 0;
+let you = 0;
 
 
-playRound()
+playRound();
 
 function game(){
     /*
@@ -16,11 +16,11 @@ function game(){
     value will win
     */
 
-    let computerSelection = 0
+    let computerSelection = 0;
     
     function getComputerChoice(){
         
-        let num = 0
+        let num = 0;
 
         function randomNumber(){
             return Math.floor(Math.random()* 3);
@@ -36,17 +36,17 @@ function game(){
             return 'scissor'
         }
 
-    }
+    };
 
-    computerSelection = getComputerChoice()
+    computerSelection = getComputerChoice();
 
 
     // rockPaperScissors function
-    rockPaperScissors()
+    rockPaperScissors();
 
     function rockPaperScissors(){
-        let getPlayerChoice = prompt("Rock, Paper, or Scissor?")
-        let playerSelection = getPlayerChoice.toLowerCase()
+        let getPlayerChoice = prompt("Rock, Paper, or Scissor?");
+        let playerSelection = getPlayerChoice.toLowerCase();
     
         if(playerSelection == computerSelection){
             return message = console.log(`Tie! You and the computer selected ${playerSelection}`)
@@ -75,7 +75,7 @@ function game(){
             you ++;
             return message = console.log("You Win! Scissors beats Paper.")
         }
-    }
+    };
 };
 
 // loop function
@@ -88,7 +88,7 @@ function playRound(){
     return winnerLoser()
 };
 
-// winner/loser display
+// winner/loser declarer
 function winnerLoser(){
 if (you > computer){
     return console.log('You win the game!')
@@ -96,4 +96,4 @@ if (you > computer){
 else{
     return console.log('You lose the game!')
 }
-}
+};
