@@ -9,7 +9,7 @@ let you = 0;
 let computerSelection = 0;
 let playerSelection = 0
 
-playRound();
+//playRound();
 
 function getComputerChoice(){
         
@@ -30,6 +30,10 @@ function getComputerChoice(){
     }
 
 };
+
+function getPlayerChoice(){
+
+}
 
 function rockPaperScissors(){
 
@@ -75,6 +79,8 @@ function game(){
 
 };
 
+
+/*
 // loop function
 function playRound(){
     for (let i = 1; i < 6; i++) {
@@ -84,6 +90,8 @@ function playRound(){
     if (i = 5)
     return winnerLoser()
 };
+*/
+
 
 // winner/loser declarer
 function winnerLoser(){
@@ -94,3 +102,24 @@ else{
     return console.log('You lose the game!')
 }
 };
+
+getPlayerChoice()
+
+function getPlayerChoice(){
+    const rock = document.getElementById('rock');
+    const paper = document.getElementById('paper');
+    const scissor = document.getElementById('scissor');
+
+    rock.addEventListener('click', function onClick(){
+        console.log('rock clicked');
+    });
+
+    paper.addEventListener('click', function onClick(){
+        console.log('paper clicked');
+    });
+
+    scissor.addEventListener('click', function onClick(){
+        console.log('scissor clicked');
+    });
+
+}
