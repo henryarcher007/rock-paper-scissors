@@ -13,7 +13,7 @@ function getComputerChoice(){
         return 'rock'
     }
     else if (num == 1){
-        return 'paper'
+        return 'rock'
     }
     else if (num == 2){
         return 'scissor'
@@ -28,7 +28,6 @@ function getPlayerChoice(){
     let rock = document.getElementById('rock')
     let paper = document.getElementById('paper')
     let scissor = document.getElementById('scissor')
-    let round = 1
 
 
     rock.addEventListener('click', () =>{
@@ -51,7 +50,6 @@ let you = 0
 let computer = 0
 
 function playRound(playerSelection, computerSelection){
-    let message = 0
     if(playerSelection == computerSelection){
         displayPlayRound(`Tie! You and the computer selected ${playerSelection}`)
     }
@@ -73,7 +71,7 @@ function playRound(playerSelection, computerSelection){
     }
     else if(computerSelection == 'rock' && playerSelection == 'paper'){
         you ++;
-        displayPlayRound("You Win! Paper beats Scissors.")
+        displayPlayRound("You Win! Paper beats Rock.")
     }
     else if(computerSelection == 'paper' && playerSelection == 'scissor'){
         you ++;
@@ -105,14 +103,16 @@ function roundCount(round){
 // winner/loser declarer
 function winnerLoser(you, computer){
 if (you > computer){
-    displayWinnerLoser('You win the game!')
+    displayWinnerLoser('You win the game! Try again?')
 }   
 else{
-    displayWinnerLoser('You lose the game!')
+    displayWinnerLoser('You lose the game! Try again?')
 }
 };
 
 function displayWinnerLoser(message){
     alert(message);
-    round = 1
+    roundCount(round = 1);
+    you = 0;
+    computer = 0;
 };

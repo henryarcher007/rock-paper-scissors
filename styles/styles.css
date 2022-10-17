@@ -60,9 +60,12 @@ body{
 
 #round{
     color: white;
+    font-family: Andale Mono, monospace;
+    font-size: 14px;
 }
 #rounds{
-    color: white
+    color: white;
+    font-family: Andale Mono, monospace;
 }
 
 .container{
@@ -78,7 +81,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: white solid 4px;
+    border: white solid 2.4px;
     border-radius: 5px;
     flex: 1;
     flex: initial;
