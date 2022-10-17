@@ -10,7 +10,7 @@ function getComputerChoice(){
     };
     num = randomNumber();
     if (num == 0){
-    return 'rock'
+        return 'rock'
     }
     else if (num == 1){
         return 'paper'
@@ -20,6 +20,8 @@ function getComputerChoice(){
     }
 
 };
+
+let round = 1
 
 function getPlayerChoice(){
    
@@ -55,19 +57,19 @@ function playRound(playerSelection, computerSelection){
     }
     else if(playerSelection == 'rock' && computerSelection == 'paper'){
         computer ++;
-        displayPlayRound("You lose! Paper beats Rock.")
+        displayPlayRound("You Lose! Paper beats Rock.")
     }
     else if(playerSelection == 'paper' && computerSelection == 'scissor'){
         computer ++;
-        displayPlayRound("You lose! Scissors beats Paper.")
+        displayPlayRound("You Lose! Scissors beats Paper.")
     }
     else if(playerSelection == 'scissor' && computerSelection == 'rock'){
         computer ++;
-        displayPlayRound("You lose! Rock beats Scissors.")
+        displayPlayRound("You Lose! Rock beats Scissors.")
     }
     else if(computerSelection == 'scissor' && playerSelection == 'rock'){
         you ++;
-        displayPlayRound("You win! Rock beats Scissors.")
+        displayPlayRound("You Win! Rock beats Scissors.")
     }
     else if(computerSelection == 'rock' && playerSelection == 'paper'){
         you ++;
@@ -86,29 +88,31 @@ function displayPlayRound(message){
 }
 
 
-function roundCount(round){
-    displayRound();
     
-    if (round >= 5){
-        console.log("GAME OVER")
-        winnerLoser(you, computer)
+
+function roundCount(round){
+    if (round <= 5){
+        const rounds = document.querySelector('#rounds');
+        rounds.textContent = `${round}`;
     }
-    function displayRound(){
-        if (round < 6){
-            const rounds = document.querySelector('#rounds');
-            rounds.textContent = `Round ${round};`
-        }
-    };
-}
+    else{
+        winnerLoser(you,computer);
+    }
+};
 
 
 
 // winner/loser declarer
 function winnerLoser(you, computer){
 if (you > computer){
-    return console.log('You win the game!')
+    displayWinnerLoser('You win the game!')
 }   
 else{
-    return console.log('You lose the game!')
+    displayWinnerLoser('You lose the game!')
 }
+};
+
+function displayWinnerLoser(message){
+    alert(message);
+    round = 1
 };

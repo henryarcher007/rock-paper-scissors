@@ -6,17 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <script src="java/java.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css"></link>
 </head>
 <body>
-    <div class='choice'>
-        <button class='buttons' id='rock'>Rock</button>
-        <button class='buttons' id ='paper'>Paper</button>
-        <button class='buttons' id ='scissor'>Scissors</button>
-    </div>
 
     <div id="statement">Rock Paper or Scissors?</div>
+    
 
-    <div id="rounds">Round 0</div>
 
+
+    <div class='choice'>
+        <button class='buttons' id='rock'>
+            <img src='rps-images/rock.png' alt="rock" height ='100'>
+            <div class="btn-txt-container">
+                <div class="button-text">ROCK</div>
+            </div>
+        </button>
+        <button class='buttons' id='paper'>
+            <img src='rps-images/paper.png' alt="paper" height ='100'>
+            <div class="btn-txt-container">
+                <div class="button-text">PAPER</div>
+            </div>
+        </button>
+        <button class='buttons' id='scissor'>
+            <img src='rps-images/scissor.png' alt="scissors" height ='100'>
+            <div class="btn-txt-container">
+                <div class="button-text">SCISSORS</div>
+            </div>
+        </button>
+    </div>
+    <div class="container">
+        <div class="round-count">
+            <div id="round">Round</div>
+            <div id="rounds">0</div>
+        </div>
+    </div>
 </body>
 </html>
